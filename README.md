@@ -1,154 +1,159 @@
-# yemen-site
-<!DOCTYPE html>
-<html lang="ar">
+ <!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>موقع الجنة - الذكاء الاصطناعي للإجابات النفسية والروحية</title>
+<title>نور الأمل</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 
   body {
     margin: 0;
-    font-family: 'Amiri', serif;
-    background: linear-gradient(135deg, #d0f0e4, #b2d8d8);
-    color: #073b3a;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #ccefff, #e0f7fa);
+    color: #333;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
   }
 
   header {
-    background: #0a8a7d;
-    width: 100%;
-    padding: 20px 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: #0288d1;
+    color: white;
+    padding: 20px;
     text-align: center;
-    color: #fff;
-    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
 
-  .logo {
-    font-size: 2.5rem;
-    font-weight: bold;
-    font-family: 'Amiri', serif;
-    letter-spacing: 4px;
-  }
-
-  .logo span {
-    font-size: 1.2rem;
-    display: block;
-    margin-top: 5px;
-    font-weight: normal;
+  header h1 {
+    margin: 0;
+    font-weight: 700;
   }
 
   main {
     flex: 1;
-    padding: 30px 15px;
-    max-width: 600px;
-    width: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
   }
 
-  h1 {
+  section.intro {
     text-align: center;
-    margin-bottom: 30px;
-    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  section.intro h2 {
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+
+  section.intro p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 10px;
+  }
+
+  section.contact {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  section.contact h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #0288d1;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #0288d1;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif;
   }
 
   textarea {
-    width: 100%;
-    height: 120px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 2px solid #0a8a7d;
-    resize: none;
-    font-size: 1.1rem;
-    font-family: 'Amiri', serif;
-    box-shadow: 0 0 8px rgba(10, 138, 125, 0.3);
+    resize: vertical;
+    min-height: 80px;
   }
 
   button {
-    margin-top: 15px;
-    width: 100%;
-    padding: 14px;
-    background-color: #0a8a7d;
+    background-color: #0288d1;
     color: white;
     border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
     border-radius: 8px;
-    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
 
   button:hover {
-    background-color: #076655;
-  }
-
-  .response {
-    margin-top: 30px;
-    background: #e1f0ed;
-    padding: 20px;
-    border-radius: 10px;
-    min-height: 100px;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    box-shadow: 0 0 15px rgba(0, 128, 110, 0.1);
-    white-space: pre-wrap;
+    background-color: #026aa7;
   }
 
   footer {
     text-align: center;
     padding: 15px 10px;
     font-size: 0.9rem;
-    color: #0a8a7d;
+    color: #555;
+    background: #e0f7fa;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">
-    الجنة
-    <span>محمد الحسني</span>
-  </div>
+  <h1>نور الأمل</h1>
 </header>
 
 <main>
-  <h1>اسأل عن مشاعرك النفسية والروحية</h1>
-  <textarea id="question" placeholder="اكتب سؤالك هنا..."></textarea>
-  <button onclick="getAnswer()">اطلب الإجابة</button>
+  <section class="intro">
+    <h2>مرحباً بك في موقع نور الأمل</h2>
+    <p>مساحتك الصغيرة للاسترخاء، التفاؤل، ومشاركة الأفكار الجميلة.</p>
+  </section>
 
-  <div class="response" id="answer"></div>
+  <section class="contact">
+    <h3>تواصل معنا</h3>
+    <form id="contactForm">
+      <label for="name">الاسم</label>
+      <input type="text" id="name" placeholder="اكتب اسمك" required />
+
+      <label for="email">البريد الإلكتروني</label>
+      <input type="email" id="email" placeholder="اكتب بريدك الإلكتروني" required />
+
+      <label for="message">رسالتك</label>
+      <textarea id="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+
+      <button type="submit">أرسل</button>
+    </form>
+    <p id="responseMsg" style="color:green; display:none; margin-top: 10px;">شكرًا لتواصلك معنا!</p>
+  </section>
 </main>
 
 <footer>
-  جميع الحقوق محفوظة &copy; 2025
+  &copy; 2025 نور الأمل. جميع الحقوق محفوظة.
 </footer>
 
 <script>
-  function getAnswer() {
-    const question = document.getElementById('question').value.trim();
-    const answerDiv = document.getElementById('answer');
+  const form = document.getElementById('contactForm');
+  const responseMsg = document.getElementById('responseMsg');
 
-    if (!question) {
-      answerDiv.textContent = 'الرجاء كتابة سؤال لنعطيك جوابًا.';
-      return;
-    }
-
-    const responses = [
-      "الصبر مفتاح الفرج، وثق بأن الله مع الصابرين.",
-      "الراحة النفسية تبدأ باليقين والتوكل على الله.",
-      "في كل أزمة حكمة، لا تفقد الأمل ولا تيأس.",
-      "التفكر في نعم الله يزيل الهم ويهدئ النفس.",
-      "الروح تحتاج إلى ذكر الله لتهدأ وتتوازن."
-    ];
-
-    const randomIndex = Math.floor(Math.random() * responses.length);
-    const answer = responses[randomIndex];
-
-    answerDiv.textContent = answer;
-  }
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    responseMsg.style.display = 'block';
+    form.reset();
+  });
 </script>
 
 </body>
